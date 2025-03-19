@@ -6,8 +6,8 @@ Android 워크북 &amp; 미션 제출 레포지토리 (ദ്ദി⩌𖥦⩌)
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/username1">
-        <img src="https://github.com/username1.png" width="100px;" alt="리원 프로필"/>
+      <a href="https://github.com/jiyoung02">
+        <img src="https://github.com/jiyoung02.png" width="100px;" alt="리원 프로필"/>
         <br />
         <sub><b>리원/황지영</b></sub>
       </a>
