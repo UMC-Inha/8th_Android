@@ -15,8 +15,8 @@ Android 워크북 &amp; 미션 제출 레포지토리 (ദ്ദി⩌𖥦⩌)
       <sub>Android 개발자</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/username2">
-        <img src="https://github.com/username2.png" width="100px;" alt="썽아 프로필"/>
+      <a href="https://github.com/sungahbak">
+        <img src="https://github.com/sungahbak.png" width="100px;" alt="썽아 프로필"/>
         <br />
         <sub><b>썽아/박성아</b></sub>
       </a>
