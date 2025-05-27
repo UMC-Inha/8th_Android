@@ -1,10 +1,13 @@
 package com.example.flo.ui.album
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.flo.DB.SongDatabase
 import com.example.flo.MainActivity
 import com.example.flo.R
 import com.example.flo.data.Album
@@ -17,9 +20,8 @@ class AlbumFragment: Fragment() {
     private var _binding : FragmentAlbumBinding ? = null
     private val binding get() = _binding!!
     private val information  = arrayListOf("수록곡", "상세정보", "영상")
-    private var title : String = ""
-    private var singer : String = ""
-    private val gson = Gson()
+    lateinit var songDB : SongDatabase
+    lateinit var spf : SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,11 +29,11 @@ class AlbumFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAlbumBinding.inflate(inflater,container,false)
-
-        val albumJson = arguments?.getString("album")
-        val album = gson.fromJson(albumJson,Album::class.java)
+        spf = requireContext().getSharedPreferences("app_data", MODE_PRIVATE)
+        songDB = SongDatabase.getIntance(requireContext())!!
+        val albumId = spf.getInt("albumId",0)
+        val album = songDB.albumDao().getAlbum(albumId)
         initData(album)
-
 
         val albumAdapter = AlbumVPAdapter(this)
         binding.vpAlbumContents.adapter = albumAdapter
